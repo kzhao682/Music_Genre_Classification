@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>What music are you listening to?</title>
+</head>
+
+<body>
+
+<p>Please select music features and we will tell you the genre classification and recommend another similar genre.</p>
+
+<form action="/predict_genre/" method="post">
+Acousticness:<br>
+  <input type="range" name="acousticness" min="0" max="100" onchange="textbox1.value = acousticness.value">
+  <input id="textbox1" type="text">
+<br>
+Danceability:<br>
+  <input type="range" name="danceability" min="0" max="100" onchange="textbox2.value = danceability.value">
+  <input id="textbox2" type="text">
+<br>
+Energy:<br>
+  <input type="range" name="energy" min="0" max="100" onchange="textbox3.value = energy.value">
+  <input id="textbox3" type="text">
+<br>
+Instrumentalness:<br>
+	<input type="range" name="instrumentalness" min="0" max="100" onchange="textbox4.value = instrumentalness.value">
+  <input id="textbox4" type="text">
+<br>
+Liveness:<br>
+  <input type="range" name="liveness" min="0" max="100" onchange="textbox5.value = liveness.value">
+  <input id="textbox5" type="text">
+<br>
+Speechiness:<br>
+  <input type="range" name="speechiness" min="0" max="100" onchange="textbox6.value = speechiness.value">
+  <input id="textbox6" type="text">
+<br>
+Tempo:<br>
+  <input type="range" name="tempo" min="0" max="200" onchange="textbox7.value = tempo.value">
+  <input id="textbox7" type="text">
+<br>
+Valence:<br>
+  <input type="range" name="valence" min="0" max="100" onchange="textbox8.value = valence.value">
+  <input id="textbox8" type="text">
+<br>
+Artist Discovery:<br>
+  <input type="range" name="artist_discovery" min="0" max="100" onchange="textbox9.value = artist_discovery.value">
+  <input id="textbox9" type="text">
+<br>
+Artist Familiarity:<br>
+  <input type="range" name="artist_familiarity" min="0" max="100" onchange="textbox10.value = artist_familiarity.value">
+  <input id="textbox10" type="text">
+<br>
+Artist Hotness:<br>
+  <input type="range" name="artist_hotttnesss" min="0" max="100" onchange="textbox11.value = artist_hotttnesss.value">
+  <input id="textbox11" type="text">
+<br>
+
+<button type="submit">
+	Discover Genre!!
+</button>
+</form>
+
+{% if message %}
+<p>{{message}}</p>
+{% endif %}
+
+</body>
+</html>
